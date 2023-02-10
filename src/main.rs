@@ -1,8 +1,9 @@
-use std::io::stdin;
+use std::io::{stdin, stdout, Write};
 
 fn main() {
-    println!("Input the Message You Would Like to Encrypt:");
-    
+    print!("Input the Message You Would Like to Encrypt: ");
+    let _ = stdout().flush();
+
     let mut message = String::new();
 
     stdin()
