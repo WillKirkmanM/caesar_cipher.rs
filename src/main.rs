@@ -17,7 +17,6 @@ fn main() {
     let chars = message.chars();
     for (count, mut char) in chars.enumerate() {
         let mut index = alphabet.iter().position(|&v| v == char).unwrap_or(25 /* Space Character in Vector */);
-        println!("IDX: {:?} WRD: {:?}", index, char);
 
         match index {
             25 => { index = index - 1 }
