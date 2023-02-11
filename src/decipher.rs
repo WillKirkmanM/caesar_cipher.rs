@@ -10,6 +10,11 @@ pub fn decipher() {
       .read_line(&mut message)
       .expect("Could Not Read Input");
 
+  let deciphered_message = decipher_message(message);
+  println!("Deciphered Message: {:?}", deciphered_message)
+}
+
+pub fn decipher_message(message: String) -> String {
   let alphabet = vec!['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
   let mut result: Vec<char> = vec![];
 
@@ -45,5 +50,5 @@ pub fn decipher() {
     }
   }
   let message: String = result.iter().collect();
-  println!("Deciphered Message: {:?}", message)
+  message
 }
