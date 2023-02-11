@@ -14,7 +14,14 @@ pub fn decipher() {
   let mut result: Vec<char> = vec![];
 
   let chars = message.trim().chars();
+  let mut uppercase_vec: Vec<usize> = vec![];
   for (count, mut char) in chars.enumerate() {
+    if char.is_ascii_uppercase() {
+      uppercase_vec.push(count);
+      char = char.to_ascii_lowercase()
+    }
+
+    if alphabet.contains(&char) {
       let mut index = alphabet.iter().position(|&v| v == char).unwrap_or(26 /* Space Character in Vector */);
 
       match index {
@@ -24,8 +31,18 @@ pub fn decipher() {
       }
 
       char = alphabet[index];
+      result.push(char);
 
-      result.insert(count, char)
+      for index in &uppercase_vec {
+        for char in result.to_owned() {
+          if char == result[*index] {
+            result[*index] = char.to_ascii_uppercase()
+          }
+        }
+      }
+    } else {
+      result.push(char)
+    }
   }
   let message: String = result.iter().collect();
   println!("Deciphered Message: {:?}", message)

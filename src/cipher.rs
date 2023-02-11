@@ -20,6 +20,8 @@ pub fn cipher() {
       uppercase_vec.push(count);
       char = char.to_ascii_lowercase();
     }
+
+  if alphabet.contains(&char) {
     let mut index = alphabet.iter().position(|&v| v == char).unwrap_or(26 /* Space Character in Vector */);
 
     match index {
@@ -28,17 +30,19 @@ pub fn cipher() {
       _ => index = index + 1
     }
     char = alphabet[index];
-    result.insert(count, char)
-  }
-
-  for index in uppercase_vec {
-    for char in result.to_owned() {
-      if char == result[index] { 
-        result[index] = char.to_ascii_uppercase() 
-      } 
+    result.push(char);
+    
+    for index in &uppercase_vec {
+      for char in result.to_owned() {
+        if char == result[*index] { 
+          result[*index] = char.to_ascii_uppercase() 
+        } 
+      }
+    }
+  } else { 
+      result.push(char) 
     }
   }
-
   let message: String = result.iter().collect();
   println!("Ciphered Message: {:?}", message);
 }
