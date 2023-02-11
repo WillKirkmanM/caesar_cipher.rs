@@ -13,7 +13,6 @@ pub fn cipher() {
   let alphabet = vec!['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
   let mut result: Vec<char> = vec![];
 
-  message.truncate(message.len() - 2);
   let chars = message.trim().chars();
   for (count, mut char) in chars.enumerate() {
       let mut index = alphabet.iter().position(|&v| v == char).unwrap_or(26 /* Space Character in Vector */);
