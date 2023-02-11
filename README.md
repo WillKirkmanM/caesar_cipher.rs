@@ -21,15 +21,21 @@ Input the Message You Would Like to Encrypt: Hello World
 
 Watch it Work!
 ```
-Ciphered Message: "ifmmp xpsme"
+Ciphered Message: "Ifmmp Xpsme"
 ```
 
 ## Deciphering
 Input your Message
 ```
-Input the Message You Would Like to Decrypt: ifmmp xpsme
+Input the Message You Would Like to Decrypt: Ifmmp Xpsme
 ```
 Watch it Work!
 ```
-Deciphered Message: "hello world"
+Deciphered Message: "Hello World"
+```
+
+## Testing
+To test the cipher, run the command:
+```
+$ cargo test
 ```
