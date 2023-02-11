@@ -1,10 +1,9 @@
-mod cipher;
-mod init;
+pub mod cipher;
+pub mod decipher;
 
+mod init;
 use init::init;
-use cipher::cipher;
 
 fn main() {
     init();
-    cipher();
 }
