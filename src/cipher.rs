@@ -10,6 +10,11 @@ pub fn cipher() {
       .read_line(&mut message)
       .expect("Could Not Read Input");
 
+    let ciphered_text = cipher_text(message);
+    println!("Ciphered Message: {:?}", ciphered_text);
+}
+
+pub fn cipher_text(message: String) -> String {
   let alphabet = vec!['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
   let mut result: Vec<char> = vec![];
 
@@ -44,5 +49,5 @@ pub fn cipher() {
     }
   }
   let message: String = result.iter().collect();
-  println!("Ciphered Message: {:?}", message);
+  message
 }
