@@ -34,6 +34,13 @@ Watch it Work!
 Deciphered Message: "Hello World"
 ```
 
+## Building
+To build the cipher, run the command:
+```
+$ cargo build --release
+```
+The binary will be found in `target/release/caesar_cipher.exe`
+
 ## Testing
 To test the cipher, run the command:
 ```
