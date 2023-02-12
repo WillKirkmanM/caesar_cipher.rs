@@ -1,4 +1,4 @@
-# Caesar Cipher Rust Rust
+# Caesar Cipher Implementation in Rust
 
 Run the Tool
 ```
